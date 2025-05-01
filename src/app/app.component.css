@@ -10,6 +10,7 @@ h1 {
     text-align: center;
     padding: 20px;
 }
+
 .cabecera {
     display: flex;
     justify-content: space-between;
@@ -40,7 +41,7 @@ h1 {
 
 .btn1:hover {
     cursor: pointer;
-    opacity: 92%;
+    opacity: 90%;
 }
 
 .btn2:hover {
@@ -122,7 +123,10 @@ h3 {
 .cat {
     display: flex;
     justify-content: space-around;
+    max-width: 1450px;
+    margin: auto;
 }
+
 
 .cat div a {
     display: flex;
@@ -142,11 +146,12 @@ h3 {
     padding: 10px;
     cursor: pointer;
 }
-.cat div a span:hover{
+
+.cat div a span:hover {
     opacity: 76%;
 }
 
-@media screen and (max-width:970px) {
+@media screen and (max-width:1050px) {
     .cat {
         display: grid;
         grid-template-columns: repeat(4, 25%);
