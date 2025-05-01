@@ -1,0 +1,30 @@
+form {
+    border: #5b87da 1px solid;
+    border-radius: 8px;
+    padding: 10px;
+    width: 40%;
+    min-width: 306px;
+    margin: auto;
+}
+
+form::first-line {
+    font-weight: bold;
+}
+
+.form div {
+    padding: 5px;
+}
+
+.form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form div:last-child {
+    justify-content: center;
+
+}
+
+.form div input[type="submit"] {
+    width: 80px;
+}
