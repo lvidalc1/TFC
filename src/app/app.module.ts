@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { CategoriasComponent } from './categorias/categorias.component';
-import { InicioComponent } from './inicio/inicio.component';
-import { GestionCategoriasComponent } from './gestion-categorias/gestion-categorias.component';
+import { LoginComponent } from './proyecto/login/login.component';
+import { CategoriasComponent } from './proyecto/categorias/categorias.component';
+import { InicioComponent } from './shared/inicio/inicio.component';
+import { GestionCategoriasComponent } from './proyecto/gestion-categorias/gestion-categorias.component';
 
 @NgModule({
   declarations: [

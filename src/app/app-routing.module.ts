@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoriasComponent } from './categorias/categorias.component';
-import { LoginComponent } from './login/login.component';
-import { InicioComponent } from './inicio/inicio.component';
+import { CategoriasComponent } from './proyecto/categorias/categorias.component';
+import { LoginComponent } from './proyecto/login/login.component';
+import { InicioComponent } from './shared/inicio/inicio.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
