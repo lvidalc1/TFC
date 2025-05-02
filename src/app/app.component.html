@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -10,10 +10,10 @@
 
 <body>
   <div class="cabecera">
-    <h1>{{title}}</h1>
+    <a href="http://localhost:4200/"><h1>{{title}}</h1></a>
     <div class="enlacesBotones">
       <a class="btn1">Hazte cliente</a>
-      <a class="btn2">
+      <a class="btn2" href="http://localhost:4200/login">
         <span class="material-symbols-outlined">
           account_circle
         </span>
@@ -57,90 +57,12 @@
       <span class="material-symbols-outlined">
         inventory
       </span>
-      <a>Plan de gestión personal</a>
+      <a href="http://localhost:4200/categorias">Plan de gestión personal</a>
     </div>
 
   </div>
-
-  <h1>Plan de gestión personal del saldo</h1>
-
-  <div class="contenedor">
-    
-    <!--se podrían crear dos categorías, más generales, anteriores a las siguientes que sean 
-    gastos fijos(vivienda, alimentacion, cuentas y pagos) y 
-    gastos variables (ropa, ocio, otros, transporte), para mayor esquematización-->
-    <h3>Categorías</h3><!--cada categoria con un icono grande representativo-->
-    <div class="cat">
-      <div>
-        <a>
-          <span class="material-symbols-outlined">
-            restaurant
-            </span>
-          Alimentacion</a>
-      </div>
-      <div>
-        <a>
-          <span class="material-symbols-outlined">
-            checkroom
-          </span>
-          Ropa</a>
-      </div>
-      <div>
-        <a>
-          <span class="material-symbols-outlined">
-            Home
-          </span>
-          Vivienda</a>
-      </div>
-      <div>
-        <a>
-          <span class="material-symbols-outlined">
-            commute
-            </span>
-          Transporte</a>
-      </div>
-      <div>
-        <a>
-          <span class="material-symbols-outlined">
-            payments
-            </span>
-          Cuentas y pagos</a>
-      </div>
-      <div>
-        <a>
-          <span class="material-symbols-outlined">
-            toys_and_games
-            </span>
-          Ocio</a>
-      </div>
-      <div>
-        <a>
-          <span class="material-symbols-outlined">
-            savings
-            </span>
-          Ahorro</a>
-      </div>
-      <div>
-        <a>
-          <span class="material-symbols-outlined">
-            list
-            </span>
-          Otros</a>
-      </div>
-
-    </div>
-
-    <p class="dest">Se destinará X € a X categoría durante X tiempo.</p>
-
-  </div>
-  <p class="plan">Este plan de gestión personal del saldo, es una forma orientativa de organización y gestión del saldo. De
-    ninguna
-    manera, se restringirá ni se privará de gastar la cantidad establecida, siempre que sea una cantidad disponible
-    en
-    la cuenta bancaria.</p>
 
 </body>
 </html>
 <router-outlet></router-outlet>
 
-<!--pequeño pie de pagina-->
