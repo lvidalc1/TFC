@@ -1,0 +1,33 @@
+<div class="cab">
+    <a href="/">
+        <!-- <h1>{{title}}</h1> -->
+        <h1>PROYECTO FIN DE CICLO</h1>
+    </a>
+</div>
+
+
+<!-- <p>¿Le interesa el plan de administración del saldo, a gestionar de forma totalmente personal?</p>
+<p>Rellene estos campos, para acceder a su cuenta bancaria y así tener acceso a esta nueva funcionalidad.</p> -->
+<p>Bienvenido a la Banca Electrónica</p>
+<div class="form">
+    <form #loginForm="ngForm" (ngSubmit)="getCredenciales(loginForm)">
+        <label>Introduzca su NIF y PIN</label>
+        <div>
+            <label>NIF: </label>
+            <input type="text" [(ngModel)]="usuarios.dni" name="dni" required>
+        </div>
+        <div>
+            <label>PIN: </label>
+            <input type="password" [(ngModel)]="usuarios.pin" name="pin" required>
+        </div>
+        <div class="botones">
+            <div class="limpiar">
+                <button type="reset">Limpiar</button>
+            </div>
+            <div class="acceder">
+                <a href="/acceso"><button type="submit">Acceder</button></a>
+            </div>
+        </div>
+    </form>
+</div>
+<!--se redirige a esta página cuando pincho en Área cliente-->

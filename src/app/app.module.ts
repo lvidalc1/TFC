@@ -3,10 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './proyecto/login/login.component';
-import { CategoriasComponent } from './proyecto/categorias/categorias.component';
+import { LoginComponent } from './proyecto/component/login/login.component';
+import { CategoriasComponent } from './proyecto/component/categorias/categorias.component';
 import { InicioComponent } from './shared/inicio/inicio.component';
-import { GestionCategoriasComponent } from './proyecto/gestion-categorias/gestion-categorias.component';
+import { GestionCategoriasComponent } from './proyecto/component/gestion-categorias/gestion-categorias.component';
+import { CabeceraPieComponent } from './shared/cabecera-pie/cabecera-pie.component';
+import { AccesoComponent } from './proyecto/component/acceso/acceso.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { GestionCategoriasComponent } from './proyecto/gestion-categorias/gestio
     LoginComponent,
     CategoriasComponent,
     InicioComponent,
-    GestionCategoriasComponent
+    GestionCategoriasComponent,
+    CabeceraPieComponent,
+    AccesoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
