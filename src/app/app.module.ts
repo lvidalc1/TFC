@@ -9,7 +9,9 @@ import { InicioComponent } from './shared/inicio/inicio.component';
 import { GestionCategoriasComponent } from './proyecto/component/gestion-categorias/gestion-categorias.component';
 import { CabeceraPieComponent } from './shared/cabecera-pie/cabecera-pie.component';
 import { AccesoComponent } from './proyecto/component/acceso/acceso.component';
+
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
