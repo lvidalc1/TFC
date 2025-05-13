@@ -1,9 +1,4 @@
-<div class="cab">
-    <a href="/">
-        <!-- <h1>{{title}}</h1> -->
-        <h1>PROYECTO FIN DE CICLO</h1>
-    </a>
-</div>
+<app-logo-principal></app-logo-principal>
 
 <!-- <p>¿Le interesa el plan de administración del saldo, a gestionar de forma totalmente personal?</p>
 <p>Rellene estos campos, para acceder a su cuenta bancaria y así tener acceso a esta nueva funcionalidad.</p> -->
@@ -13,11 +8,11 @@
         <p>Introduzca su NIF y PIN</p>
         <div>
             <label for="dni">NIF: </label>
-            <input id="dni" type="text" [(ngModel)]="usuarios.dni" name="dni" required>
+            <input id="dni" type="text" [(ngModel)]="dniU" name="dni" required>
         </div>
         <div>
             <label for="pin">PIN: </label>
-            <input id="pin" type="password" [(ngModel)]="usuarios.pin" name="pin" required>
+            <input id="pin" type="password" [(ngModel)]="pinU" name="pin" required>
         </div>
     </div>
     <div class="botones">
