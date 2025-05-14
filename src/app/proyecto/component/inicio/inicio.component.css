@@ -1,17 +1,76 @@
-div{
+.cont,
+.cont3 {
     background-color: #ccdbf7;
     height: 300px;
     padding: 10px;
-    margin: 10px;
+    margin: 20px 30px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-h1{
+h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.cont h1 {
     font-size: 52px;
     color: white;
 }
 
+.cont2 h1 {
+    color: #6b97ea;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.cont2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cajaCont {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+    width: 70%;
+}
+
+.cajaCont div {
+    border: 1px solid #ccdbf7;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.cajaCont span {
+    color: #6b97ea;
+    padding: 10px;
+}
+
+.cajaCont div:hover {
+    cursor: pointer;
+    background-color: #ccdbf7;
+}
+
+.cont3 {
+    height: 180px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.cont3 h1 {
+    color: #6b97ea;
+}
+
+.cont3 div {
+    text-align: center;
+}
