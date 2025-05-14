@@ -1,10 +1,8 @@
-.contenedor{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
 .contenedor {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 10px;
 }
+
 .dest {
     font-weight: bold;
 }
@@ -17,10 +15,10 @@
     padding: 5px 0;
 }
 
-
-.tiempo{
+.tiempo {
     display: flex;
 }
- p{
+
+p {
     margin: 5px;
 }
