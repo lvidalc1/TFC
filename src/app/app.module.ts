@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PosicionGlobalComponent } from './proyecto/component/posicion-global/posicion-global.component';
 import { OpcionesCategoriasComponent } from './shared/opciones-categorias/opciones-categorias.component';
+import { MenuLateralComponent } from './shared/menu-lateral/menu-lateral.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { OpcionesCategoriasComponent } from './shared/opciones-categorias/opcion
     AccesoComponent,
     PosicionGlobalComponent,
     OpcionesCategoriasComponent,
-    LogoPrincipalComponent
+    LogoPrincipalComponent,
+    MenuLateralComponent
   ],
   imports: [
     BrowserModule,

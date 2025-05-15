@@ -1,0 +1,38 @@
+<div class="menu">
+        <div class="separador"></div>
+        <div [ngClass]="{'activo':selectedMenu==='cuentas'}" (click)="selectMenu('cuentas')"><!---->
+            <a [routerLink]="['/posicionGlobal']"><span class="material-symbols-outlined">
+                    account_balance
+                </span>Cuentas</a>
+        </div>
+        <div [ngClass]="{'activo':selectedMenu==='tarjetas'}" (click)="selectMenu('tarjetas')">
+            <a [routerLink]="['/posicionGlobal']"><span class="material-symbols-outlined">
+                    credit_card
+                </span>Tarjetas</a>
+        </div>
+        <div [ngClass]="{'activo':selectedMenu==='prestamos'}" (click)="selectMenu('prestamos')">
+            <a [routerLink]="['/posicionGlobal']"><span class="material-symbols-outlined">
+                    money_bag
+                </span>Préstamos</a>
+        </div>
+        <div [ngClass]="{'activo':selectedMenu==='seguros'}" (click)="selectMenu('seguros')">
+            <a [routerLink]="['/posicionGlobal']"><span class="material-symbols-outlined">
+                    verified_user
+                </span>Seguros</a>
+        </div>
+        <div [ngClass]="{'activo':selectedMenu==='transacciones'}" (click)="selectMenu('transacciones')">
+            <a [routerLink]="['/posicionGlobal']"><span class="material-symbols-outlined">
+                    contract
+                </span>Transacciones</a>
+        </div>
+
+        <div class="separador"></div>
+        <p>Servicios</p>
+        <div [ngClass]="{'activo':selectedMenu==='plan'}" (click)="selectMenu('plan')">
+            <a [routerLink]="['/acceso']"><span class="material-symbols-outlined">
+                    inventory
+                </span>Plan de gestión personal</a>
+        </div>
+        <div class="separador"></div>
+    </div>
+    

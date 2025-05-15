@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   
     const acceso = this.loginService.login(this.usuarios);
     if (acceso) {
-      this.router.navigate(['/acceso']);
+      this.router.navigate(['/posicionGlobal']);
     } else {
       alert('Datos incorrectos');
     }
