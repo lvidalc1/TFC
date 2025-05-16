@@ -1,7 +1,9 @@
 <div class="menu">
         <div class="separador"></div>
-        <div [ngClass]="{'activo':selectedMenu==='cuentas'}" (click)="selectMenu('cuentas')"><!---->
+        <div [ngClass]="{'activo':selectedMenu==='cuentas'}" (click)="selectMenu('cuentas')">
+            <!--de esta manera la clase activo, solo se aplicará si selectedMenu es igual a cuentas en este caso.-->
             <a [routerLink]="['/posicionGlobal']"><span class="material-symbols-outlined">
+                <!--[routerLink] cambia de ruta sin recargar la pagina-->
                     account_balance
                 </span>Cuentas</a>
         </div>
