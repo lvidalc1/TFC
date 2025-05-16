@@ -33,7 +33,7 @@
 }
 
 .cat a span:hover {
-    opacity: 80%;
+    box-shadow: 1px 1px 8px grey;
 }
 
 h4 {
@@ -44,4 +44,18 @@ h4 {
 }
 .fjo:hover, .variable:hover{
     cursor: pointer;
+}
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido img, .contenido div{
+    padding: 5px;
+}
+.contenido img{
+    width: 400px;
+}
+.contenido input{
+    height: 30px;
 }

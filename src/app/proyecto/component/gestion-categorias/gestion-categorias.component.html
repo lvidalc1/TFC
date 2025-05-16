@@ -1,10 +1,24 @@
 <app-posicion-global></app-posicion-global>
-<div class="cat">
-    <a href="/gestion">
-        <span class="material-symbols-outlined">
-            payments
-        </span>
-        Cuentas y pagos</a>
+<div class="contenido">
+    <div class="cat">
+        <a href="/gestion">
+            <span class="material-symbols-outlined">
+                payments
+            </span>
+            Cuentas y pagos</a>
+    </div>
+    <img
+        src="https://media.licdn.com/dms/image/v2/D4D12AQFeey0ZGli3Xg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1672850783649?e=2147483647&v=beta&t=gXkecaQZHLSFmgKayiWzgm6IWc9Cd0FBGsa_5cHah-E">
+    <!--esta imagen también se substituirá por una gráfica que permita variaciones de datos, pero será una gráfica específica de cada categoría-->
+    <div class="presupuesto">
+        <label>Presupuesto para la categoría seleccionada: </label>
+        <input type="number">
+        <span> €</span>
+        <p>Si quiere modificar el presupuesto ingrese la cantidad correspondiente y guarde los cambios</p>
+        <button>Modificar campos</button>
+        <button>Guardar</button>
+    </div>
+    <!--opción a cambiar mensaje de aviso, que indique si superado el presupuesto o si te quedaste por debajo, pero este mensaje que sea personalizable-->
 </div>
 <!--se selecciona el tipo de categoria a gestionar, para poder ver la evolucion de la cuenta bancaria, 
 poner un presupuesto, hacer grafica, para ver si los gastos estan por encima o por debajo-->
