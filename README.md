@@ -1,30 +1,57 @@
 # TFC
 
-# TrabajoFinCiclo
+# Trabajo de Fin de Ciclo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+## Índice
 
-## Development server
+- [Descripción del proyecto](#descripción-del-proyecto)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Estado del proyecto](#estado-del-proyecto)
 
-## Code scaffolding
+- [Demostración de funciones y aplicaciones](#demostración-de-funciones-y-aplicaciones)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Acceso al proyecto](#acceso-al-proyecto)
+  
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
 
-## Build
+- [Personas desarrolladoras](#personas-desarrolladoras)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Descripción del proyecto
 
-## Running end-to-end tests
+Este proyecto consiste en un plan de gestión personal del saldo, que ofrece la mejora de organización de las finanzas personales de los usuarios. 
+Es una idea propia, inspirada en algunas funcionalidades que ofrecen los bancos, pero adaptada a métodos de organización y con enfoque a una gestión más flexible, libre y personal. 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+El sistema permite al usuario establecer un presupuesto por categoría de gasto, con una frecuencia específica, es decir, que abarque un período de tiempo determinado. En ningún momento se bloquean las transacciones ni se limita el uso del saldo, mientras que esté disponible en la cuenta bancaria. La finalidad de esta funcionalidad es la guía y organización financiera, sin imponer reglas estrictas. 
 
-## Further help
+El público al que va dirigido esta funcionalidad es cualquier persona interesada en controlar y gestionar sus gastos personales. Aunque está diseñada para un entorno web, el proyecto está enfocado en su uso a través de dispositivos móviles, dado que es el medio más habitual actualmente, desde el cual los usuarios gestionan sus finanzas. 
+En lo referente a las tecnologías, hasta ahora el desarrollo del proyecto se ha realizado utilizando la herramienta Visual Studio Code, y los lenguajes HTML, CSS y TypeScript. Para realizar las pruebas de la comunicación cliente-servidor se ha empleado la herramienta de testeo SoapUI. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A futuro se prevé la incorporación de algoritmos de aprendizaje automático, que analicen los datos de ingresos, ventas y gastos del usuario, con el fin de distribuir y de generar automáticamente las categorías de gastos, mediante el registro y lectura de los gastos realizados, aumentando así el grado de automatización y personalización de la herramienta. Además esta funcionalidad, se centrará de forma progresiva en el uso desde los móviles, adaptando totalmente la interfaz para poder ofrecer una experiencia optimizada a los usuarios.
 
+## Estado del proyecto
+
+![Static Badge](https://img.shields.io/badge/estado-en%20desarrollo-green)
+
+## Acceso al proyecto
+
+Puede acceder al código [fuente del proyecto](https://github.com/lvidalc1/TFC/tree/desarrollo)
+
+## Tecnologías ultilizadas
+
+<a href="https://developer.mozilla.org/es/docs/Web/HTML">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" alt="fotoHtml" width="100px"/>
+</a>
+
+<a href="https://developer.mozilla.org/es/docs/Web/CSS">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" alt="fotoCss" width="70px"/>
+</a>
+
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/TypeScript">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" alt="fotoTypeScript" width="90px"/>
+</a>
+
+## Personas desarrolladoras
+
+Lucía Vidal Crespo - 2ºDAW
