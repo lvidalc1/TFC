@@ -8,6 +8,8 @@
 
 - [Estado del proyecto](#estado-del-proyecto)
 
+- [Herramientas utilizadas](#herramientas-utilizadas)
+
 - [Demostración de funciones y aplicaciones](#demostración-de-funciones-y-aplicaciones)
 
 - [Acceso al proyecto](#acceso-al-proyecto)
@@ -30,15 +32,53 @@ En lo referente a las tecnologías, hasta ahora el desarrollo del proyecto se ha
 
 A futuro se prevé la incorporación de algoritmos de aprendizaje automático, que analicen los datos de ingresos, ventas y gastos del usuario, con el fin de distribuir y de generar automáticamente las categorías de gastos, mediante el registro y lectura de los gastos realizados, aumentando así el grado de automatización y personalización de la herramienta. Además esta funcionalidad, se centrará de forma progresiva en el uso desde los móviles, adaptando totalmente la interfaz para poder ofrecer una experiencia optimizada a los usuarios.
 
+
+
+## Herramientas utilizadas
+
+Para la realización de este proyecto se ha usado Angular, un framework de fronted, que utiliza herramientas basadas en Node.js para funcionar, también necesita npm, ya que sino no se podrían ni instalar ni gestionar los módulos que Angular necesita.
+
+### Instalación herramientas
+
+Las versiones de las herramientas utilizadas para el desarrollo de este proyecto son las siguientes:
+
+- Angular: 12
+- Node: 12.22.12
+- npm: 6.14.16 (8.15.1)
+
+No son necesarias estas mismas versiones para la ejecución del proyecto, pero deben ser compatibles. Alguna versión compatible con 
+
+#### Instalación Node y npm
+
+Para la descarga e instalación de las herramientas arriba mencionadas se seguirán los siguientes pasos:
+
+- Descargar [node](https://nodejs.org/es/download) (npm viene incuido con node, no hay que descargarlo aparte, mas si se quiere actualizar o forzar a una versión concreta, se ejecutaría el siguiente comando con la versión de preferencia: **npm install npm@8.15.1**).
+- Tras su descarga, habrá que ejecutar el instalador.
+- Para verificar su correcta instalación, abriremos la terminal y ejecutaremos los siguientes comandos: **node -v** para comprobar la instalación del node y **npm -v** para la de npm (esto debería devolver algo como v12.22.12 y 6.14.16, respectivamente, dependiendo de las versiones instaladas).
+
+#### Instalación Angular e inicialización del proyecto
+
+Para la instalación de Angular:
+- Ejecutar en terminal el siguiente comando: **npm install -g @angular/cli@12**
+
+Para la ejecución de un proyecto:
+- Para crear un nuevo proyecto se ejecuta: **ng new nombre-proyecto** (en este caso ya está creado, solo habría que inicializarlo).
+- Situarse en la carpeta del proyecto creado: **cd nombre-proyecto** (cd proyecto-fin-ciclo)
+- Iniciamos el servidor de desarrollo con **ng serve --open** (con --open se abre un navegador a http/localhost:4200/)
+
+
+
 ## Estado del proyecto
 
 ![Static Badge](https://img.shields.io/badge/estado-en%20desarrollo-green)
 
 ## Acceso al proyecto
 
-Puede acceder al código [fuente del proyecto](https://github.com/lvidalc1/TFC/tree/desarrollo)
+Puede acceder al código [fuente del proyecto](https://github.com/lvidalc1/TFC/tree/desarrollo/src/app).
 
 ## Tecnologías ultilizadas
+
+Los lenguajes utilizados para la capa frontend, mediante el framework de Angular y usando como editor de código Visual Studio Code, han sido: HTML, CSS y TypeScript
 
 <a href="https://developer.mozilla.org/es/docs/Web/HTML">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" alt="fotoHtml" width="100px"/>
