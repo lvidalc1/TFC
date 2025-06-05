@@ -12,19 +12,17 @@ import jakarta.persistence.Table;
 
 public class CategoriaEntity {
 	@Id
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="idCat")
 	private int idCat;
+	@Column(name="nombre")
     private String nombre;
-    private Double presupuesto;
-    private String frecuencia;
     
     public CategoriaEntity() {}
 
-    public CategoriaEntity(int idCat, String nombre, Double presupuesto, String frecuencia) {
+    public CategoriaEntity(int idCat, String nombre) {
         this.idCat = idCat;
         this.nombre = nombre;
-        this.presupuesto = presupuesto;
-        this.frecuencia = frecuencia;
     }
     
     public int getIdCat() {
@@ -39,20 +37,6 @@ public class CategoriaEntity {
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public Double getPresupuesto() {
-        return presupuesto;
-    }
-    public void setPresupuesto(Double presupuesto) {
-        this.presupuesto = presupuesto;
-    }
-    
-    public String getFrecuencia() {
-    	return frecuencia;
-    }
-    public void setFrecuencia(String frecuencia) {
-    	this.frecuencia=frecuencia;
     }
 
 }

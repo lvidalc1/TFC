@@ -1,5 +1,8 @@
 package com.pfc.planGestion.repositorio.persistencia.component;
 
+import java.math.BigDecimal;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -11,20 +14,22 @@ import jakarta.persistence.Table;
 
 public class CuentaEntity {
 	@Id
+	@Column(name = "iban")
 	private String iban;
+	@Column(name = "numCuenta")
 	private String numCuenta;
 	@ManyToOne
 	@JoinColumn(name = "nif_usuario")
 	private UsuarioEntity titular;
 	// un usuario puede tener varias cuentas
-
-	private Double saldo;
+	@Column(name = "saldo")
+	private BigDecimal saldo;
 
 	public CuentaEntity() {
 
 	}
 
-	public CuentaEntity(String iban, String numCuenta, UsuarioEntity titular, Double saldo) {
+	public CuentaEntity(String iban, String numCuenta, UsuarioEntity titular, BigDecimal saldo) {
 		this.iban = iban;
 		this.numCuenta = numCuenta;
 		this.titular = titular;
@@ -55,11 +60,11 @@ public class CuentaEntity {
 		this.titular = titular;
 	}
 
-	public Double getSaldo() {
+	public BigDecimal getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(Double saldo) {
+	public void setSaldo(BigDecimal saldo) {
 		this.saldo = saldo;
 	}
 

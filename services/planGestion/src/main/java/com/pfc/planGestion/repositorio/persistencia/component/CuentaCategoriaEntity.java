@@ -1,29 +1,43 @@
 package com.pfc.planGestion.repositorio.persistencia.component;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="cuentaCategorias")
+@Table(name="cuenta_categoria")
 
 public class CuentaCategoriaEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	private  int idCuentaCat;
-	private String ibanCuenta;
-	private int idCategoria;
-	private Double presupuesto;
+	@Column(name="idCc")
+	private int idCuentaCat;
+	@ManyToMany
+    @JoinColumn(name = "iban_cuenta")
+	private CuentaEntity cuenta;
+	@ManyToMany
+    @JoinColumn(name = "id_categoria")
+	private CategoriaEntity categoria;
+	@Column(name="presupuesto")
+	private BigDecimal presupuesto;
+	@Column(name="frecuencia")
 	private String frecuencia;
 	
 	public CuentaCategoriaEntity() {}
 	
-	public CuentaCategoriaEntity(int idCuentaCat, String ibanCuenta, int idCategoria, Double presupuesto, String frecuencia) {
-		
+	public CuentaCategoriaEntity(int idCuentaCat, CuentaEntity cuenta, CategoriaEntity categoria, BigDecimal presupuesto, String frecuencia) {
+		this.idCuentaCat = idCuentaCat;
+	    this.cuenta = cuenta;
+	    this.categoria = categoria;
+	    this.presupuesto = presupuesto;
+	    this.frecuencia = frecuencia;
 	}
 	
 	public int getIdCuentaCat() {
@@ -33,24 +47,24 @@ public class CuentaCategoriaEntity {
         this.idCuentaCat = idCuentaCat;
     }
 
-    public String getIbanCuenta() {
-        return ibanCuenta;
+    public CuentaEntity getCuenta() {
+        return cuenta;
     }
-    public void setIbanCuenta(String ibanCuenta) {
-        this.ibanCuenta = ibanCuenta;
+    public void setCuenta(CuentaEntity cuenta) {
+        this.cuenta = cuenta;
     }
     
-    public int getIdCategoria() {
-        return idCategoria;
+    public CategoriaEntity getCategoria() {
+        return categoria;
     }
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setCategoria(CategoriaEntity categoria) {
+        this.categoria = categoria;
     }
 
-    public Double getPresupuesto() {
+    public BigDecimal getPresupuesto() {
         return presupuesto;
     }
-    public void setPresupuesto(Double presupuesto) {
+    public void setPresupuesto(BigDecimal presupuesto) {
         this.presupuesto = presupuesto;
     }
     

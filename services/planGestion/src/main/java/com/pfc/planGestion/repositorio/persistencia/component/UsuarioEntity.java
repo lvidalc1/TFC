@@ -1,27 +1,31 @@
 package com.pfc.planGestion.repositorio.persistencia.component;
 
-import java.util.List;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Table(name="usuarios")
 @Entity
 public class UsuarioEntity {
-	@Id//esta anotacion id, marca el campo nif como clave primaria
+	//esta anotacion id, marca el campo nif como clave primaria
+	@Id
+	@Column(name = "nif")
 	private String nif;
+	@Column(name = "pin")
 	private String pin;
+	@Column(name = "nombre")
 	private String nombre;
+	@Column(name = "apel1")
 	private String apel1;
+	@Column(name = "apel2")
 	private String apel2;
+	@Column(name = "direccion")
 	private String direccion;
+	@Column(name = "correo")
 	private String correo;
-	
-
-	@OneToMany(mappedBy = "titular")
-	private List<CuentaEntity> cuentas;//las entidades JPA deben referirse solo a otras entidades JPA, no a modelos de dominio
 	
 	public UsuarioEntity() {
 		
@@ -36,7 +40,7 @@ public class UsuarioEntity {
 		this.direccion=direccion;
 		this.correo=correo;
 	}
-	
+
 	public String getNif() {
 		return nif;
 	}
@@ -85,15 +89,5 @@ public class UsuarioEntity {
 	public void setCorreo(String correo) {
 		this.correo=correo;
 	}
-	
-	//getters y setters para Cuentas de usuario
-	
-	public List<CuentaEntity> getCuentas() {
-        return cuentas;
-    }
-
-    public void setCuentas(List<CuentaEntity> cuentas) {
-        this.cuentas = cuentas;
-    }
 	
 }

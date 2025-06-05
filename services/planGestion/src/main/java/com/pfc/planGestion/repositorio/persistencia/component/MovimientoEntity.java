@@ -1,10 +1,15 @@
 package com.pfc.planGestion.repositorio.persistencia.component;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -12,24 +17,34 @@ import jakarta.persistence.Table;
 
 public class MovimientoEntity {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idMov")
 	private int idMov;
 	@Column(name = "fecha")
 	private LocalDateTime fecha;
-	private Double importe;
-	private Double reintegro;
-	private Double saldoActual;
-	@Column(name = "iban")
-	private String iban;
+	@Column(name = "importe")
+	private BigDecimal importe;
+	@Column(name = "reintegro")
+	private BigDecimal reintegro;
+	@Column(name = "saldoActual")
+	private BigDecimal saldoActual;
+	@ManyToOne
+	@JoinColumn(name = "iban_cuenta")
+	private CuentaEntity iban;
+//	@ManyToOne
+//    @JoinColumn(name = "id_categoria")
+//	private CategoriaEntity nombreCategoria;
 	
 	public MovimientoEntity() {}
 	
-	public MovimientoEntity(int idMov, LocalDateTime fecha, Double importe, Double reintegro, Double saldoActual, String iban) {
+	public MovimientoEntity(int idMov, LocalDateTime fecha, BigDecimal importe, BigDecimal reintegro, BigDecimal saldoActual, CuentaEntity iban) {
 		this.idMov=idMov;
 		this.fecha=fecha;
 		this.importe=importe;
 		this.reintegro=reintegro;
 		this.saldoActual=saldoActual;
 		this.iban=iban;
+//		this.nombreCategoria=nombreCategoria;
 	}
 	
 	public int getIdMov() {
@@ -46,31 +61,38 @@ public class MovimientoEntity {
 		this.fecha=fecha;
 	}
 	
-	public Double getImporte() {
+	public BigDecimal getImporte() {
 		return importe;
 	}
-	public void setImporte(Double importe) {
+	public void setImporte(BigDecimal importe) {
 		this.importe=importe;
 	}
 	
-	public Double getReintegro() {
+	public BigDecimal getReintegro() {
 		return reintegro;
 	}
-	public void setReintegro(Double reintegro) {
+	public void setReintegro(BigDecimal reintegro) {
 		this.reintegro=reintegro;
 	}
 	
-	public Double getSaldoActual() {
+	public BigDecimal getSaldoActual() {
 		return saldoActual;
 	}
-	public void setSaldoActual(Double saldoActual) {
+	public void setSaldoActual(BigDecimal saldoActual) {
 		this.saldoActual=saldoActual;
 	}
 	
-	public String getIban() {
+	public CuentaEntity getIban() {
 		return iban;
 	}
-	public void setIban(String iban) {
+	public void setIban(CuentaEntity iban) {
 		this.iban=iban;
 	}
+	
+//	public CategoriaEntity getNombreCategoria() {
+//		return nombreCategoria;
+//	}
+//	public void setNombreCategoria(CategoriaEntity nombreCategoria) {
+//		this.nombreCategoria=nombreCategoria;
+//	}
 }
