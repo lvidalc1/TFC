@@ -1,36 +1,31 @@
 package com.pfc.planGestion.dominio.modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
-import java.sql.Timestamp;
-//import java.time.LocalDateTime;
-
-@Entity
-@Table(name="movimientos")
+import com.pfc.planGestion.repositorio.persistencia.component.CuentaEntity;
 
 public class Movimiento {
-	@Id
 	private int idMov;
-	private Timestamp fecha;//la fecha no puede ser el id, pq se pueden realizar movimientos en la misma hora
-//	private LocalDateTime fecha;
-//	private Double ingresos;
-//	private Double gastos;
-	private Double importe;//en vez de ingresos y gastos, un solo importe y que este sea positivo o negativo dependiendo de si es un ingreso o gasto
-	private Double saldoAnterior;
-	private Double saldoActual;
-	private String IBAN;
+	private LocalDateTime fecha;
+	private BigDecimal importe;
+	private BigDecimal reintegro;
+	private BigDecimal saldoActual;
+	private CuentaEntity iban;
+//	private String nombreTitular;
+//	private String nombreCategoria;
 	
 	public Movimiento() {}
 	
-	public Movimiento(int idMov, Timestamp fecha, Double importe, Double saldoAnterior, Double saldoActual, String IBAN) {
+	public Movimiento(int idMov, LocalDateTime fecha, BigDecimal importe, BigDecimal reintegro, BigDecimal saldoActual, CuentaEntity iban) {
 		this.idMov=idMov;
 		this.fecha=fecha;
 		this.importe=importe;
-		this.saldoAnterior=saldoAnterior;
+		this.reintegro=reintegro;
 		this.saldoActual=saldoActual;
-		this.IBAN=IBAN;
+		this.iban=iban;
+//		this.nombreTitular=nombreTitular;
+//		this.nombreCategoria=nombreCategoria;
 	}
 	
 	public int getIdMov() {
@@ -40,39 +35,53 @@ public class Movimiento {
 		this.idMov=idMov;
 	}
 	
-	public Timestamp getFecha() {
+	public LocalDateTime getFecha() {
 		return fecha;
 	}
-	public void setFecha(Timestamp fecha) {
+	public void setFecha(LocalDateTime fecha) {
 		this.fecha=fecha;
 	}
 	
-	public Double getImporte() {
+	public BigDecimal getImporte() {
 		return importe;
 	}
-	public void setImporte(Double importe) {
+	public void setImporte(BigDecimal importe) {
 		this.importe=importe;
 	}
 	
-	public Double getSaldoAnterior() {
-		return saldoAnterior;
+	public BigDecimal getReintegro() {
+		return reintegro;
 	}
-	public void setSaldoAnterior(Double saldoAnterior) {
-		this.saldoAnterior=saldoAnterior;
+	public void setReintegro(BigDecimal reintegro) {
+		this.reintegro=reintegro;
 	}
 	
-	public Double getSaldoActual() {
+	public BigDecimal getSaldoActual() {
 		return saldoActual;
 	}
-	public void setSaldoActual(Double saldoActual) {
+	public void setSaldoActual(BigDecimal saldoActual) {
 		this.saldoActual=saldoActual;
 	}
 	
-	public String getIBAN() {
-		return IBAN;
+	public CuentaEntity getIban() {
+		return iban;
 	}
-	public void setIBAN(String IBAN) {
-		this.IBAN=IBAN;
+	public void setIban(CuentaEntity iban) {
+		this.iban=iban;
 	}
+	
+//	public String getNombreTitular() {
+//		return nombreTitular;
+//	}
+//	public void setNombreTitular(String nombreTitular) {
+//		this.nombreTitular=nombreTitular;
+//	}
+	
+//	public String getNombreCategoria() {
+//		return nombreCategoria;
+//	}
+//	public void setNombreCategoria(String nombreCategoria) {
+//		this.nombreCategoria=nombreCategoria;
+//	}
 }
 

@@ -1,15 +1,17 @@
 package com.pfc.planGestion.dominio.modelo;
 
+import java.math.BigDecimal;
+
 public class Cuenta {
 	private String iban;
 	private String numCuenta;
 	private Usuario titular;
 	//un usuario puede tener varias cuentas
-	private Double saldo;
+	private BigDecimal saldo;
 
 	public Cuenta() {}
 
-	public Cuenta(String iban, String numCuenta, Usuario titular, Double saldo) {
+	public Cuenta(String iban, String numCuenta, Usuario titular, BigDecimal saldo) {
 		this.iban=iban;
 		this.numCuenta=numCuenta;
 		this.titular=titular;
@@ -37,10 +39,10 @@ public class Cuenta {
 		this.titular=titular;
 	}
 	
-	public Double getSaldo() {
+	public BigDecimal getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(Double saldo) {
+	public void setSaldo(BigDecimal saldo) {
 		this.saldo=saldo;
 	}
 
