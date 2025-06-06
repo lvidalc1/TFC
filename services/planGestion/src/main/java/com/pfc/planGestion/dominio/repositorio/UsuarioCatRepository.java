@@ -11,5 +11,6 @@ public interface UsuarioCatRepository {
     List<UsuarioCat> findByFrecuencia(String frecuencia);
     List<UsuarioCat> findByIdCategoria(long idCategoria);
 	void save(UsuarioCat usuarioCat);
+	Optional<UsuarioCat> findByNifAndIdCategoria(String nif, long idCategoria);
 
 }

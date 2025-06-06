@@ -46,21 +46,32 @@ public class UsuarioCatController {
     
     @PostMapping
     public ResponseEntity<?> guardarPresupuesto(@RequestBody UsuarioCatDTO dto, HttpSession session) {
-        //obtener usuario actual desde sesión
         String nif = (String) session.getAttribute("usuario");
         if (nif == null) {
             return ResponseEntity.status(401).body("Usuario no autenticado");
         }
-
-        dto.setNif(nif); // asegurar que se guarde con el usuario logueado
+        if (dto.getPresupuesto() == null || dto.getPresupuesto() < 0) {
+            return ResponseEntity.badRequest().body("El presupuesto debe ser un número positivo.");
+        }
+        if (dto.getCategoria() <= 0) {
+            return ResponseEntity.badRequest().body("Categoría inválida.");
+        }
+        if (dto.getFrecuencia() == null || dto.getFrecuencia().isBlank()) {
+        	dto.setFrecuencia("Mensual");
+        }System.out.println("DTO recibido:");
+        System.out.println("Categoría ID: " + dto.getCategoria());
+        System.out.println("Presupuesto: " + dto.getPresupuesto());
+        System.out.println("Frecuencia: " + dto.getFrecuencia());
+        System.out.println("NIF: " + nif);
         
-        System.out.println("Recibido presupuesto para categoría: " + dto.getCategoria() +
-                " | Presupuesto: " + dto.getPresupuesto() +
-                " | Frecuencia: " + dto.getFrecuencia() +
-                " | Usuario: " + dto.getNif());
 
+        dto.setNif(nif);
         usuarioCatService.guardarPresupuesto(dto);
         return ResponseEntity.ok("Presupuesto guardado correctamente");
+        
+        
+        
     }
+
 
 }

@@ -55,6 +55,14 @@ public class UsuarioCatRepositoryDao implements UsuarioCatRepository {
     public void save(UsuarioCat usuarioCat) {
         jpaRepository.save(mapper.toEntity(usuarioCat));
     }
+    
+    @Override
+    public Optional<UsuarioCat> findByNifAndIdCategoria(String nif, long idCategoria) {
+        return jpaRepository.findByUsuario_NifAndCategoria_IdCat(nif, idCategoria)
+                            .map(mapper::toDomain);
+    }
+
+
 
 
 }
