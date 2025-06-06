@@ -1,7 +1,6 @@
 package com.pfc.planGestion.interfaz.rest;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pfc.planGestion.aplicacion.negocio.CategoriaService;
-import com.pfc.planGestion.dominio.modelo.Categoria;
+import com.pfc.planGestion.interfaz.dto.CategoriaDTO;
 
 @RestController
 @RequestMapping("/categorias")
@@ -23,13 +22,13 @@ public class CategoriaController {
 
     //listar categorias
     @GetMapping
-    public List<Categoria> listarCategorias() {
+    public List<CategoriaDTO> listarCategorias() {
         return categoriaService.listarCategorias();
     }
 
     //buscar categoria por nombre
     @GetMapping("/buscar")
-    public Optional<Categoria> buscarPorNombre(
+    public CategoriaDTO buscarPorNombre(
             @RequestParam String nombre) {
         return categoriaService.buscarPorNombre(nombre);
     }

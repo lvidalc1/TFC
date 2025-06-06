@@ -1,14 +1,14 @@
 package com.pfc.planGestion.repositorio.persistencia.dao;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
-import com.pfc.planGestion.aplicacion.mapper.CategoriaEntityMapper;
 import com.pfc.planGestion.dominio.modelo.Categoria;
 import com.pfc.planGestion.dominio.repositorio.CategoriaRepository;
 import com.pfc.planGestion.repositorio.persistencia.jpa.CategoriaJpaRepository;
+import com.pfc.planGestion.repositorio.persistencia.mapper.CategoriaEntityMapper;
 
 @Repository
 public class CategoriaRepositoryDao implements CategoriaRepository {
@@ -25,13 +25,12 @@ public class CategoriaRepositoryDao implements CategoriaRepository {
     public List<Categoria> findAll() {
         return jpaRepository.findAll().stream()
                 .map(mapper::toDomain)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override
-    public Optional<Categoria> findByNombre(String nombre) {
-        return jpaRepository.findByNombre(nombre)
-                .map(mapper::toDomain);
+    public Categoria findByNombre(String nombre) {
+        return mapper.toDomain(jpaRepository.findByNombre(nombre));
     }
 
 }

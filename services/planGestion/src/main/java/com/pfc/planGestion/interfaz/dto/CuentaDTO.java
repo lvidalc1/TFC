@@ -1,23 +1,20 @@
 package com.pfc.planGestion.interfaz.dto;
 
-import com.pfc.planGestion.dominio.modelo.Cuenta;
-import com.pfc.planGestion.dominio.modelo.Usuario;
-
 public class CuentaDTO {
 	private String iban;
 	private String numCuenta;
-	private Usuario titular;
+	private UsuarioDTO titular;
 	private Double saldo;
 	
 	public CuentaDTO() {}
 	
-	public CuentaDTO(Cuenta cuenta) {
-		this.iban=cuenta.getIban();
-		this.numCuenta=cuenta.getNumCuenta();
-		this.titular=cuenta.getTitular();
-		this.saldo=cuenta.getSaldo().doubleValue();
+	public CuentaDTO(String iban, String numCuenta, UsuarioDTO titular, Double saldo) {
+		this.iban=iban;
+		this.numCuenta=numCuenta;
+		this.titular=titular;
+		this.saldo=saldo;
 	}
-	
+
 	public String getIban() {
 		return iban;
 	}
@@ -32,10 +29,10 @@ public class CuentaDTO {
 		this.numCuenta=numCuenta;
 	}
 	
-	public Usuario getTitular() {
+	public UsuarioDTO getTitular() {
 		return titular;
 	}
-	public void setTitular(Usuario titular) {
+	public void setTitular(UsuarioDTO titular) {
 		this.titular=titular;
 	}
 	

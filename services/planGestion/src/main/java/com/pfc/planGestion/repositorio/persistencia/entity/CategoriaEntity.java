@@ -1,4 +1,4 @@
-package com.pfc.planGestion.repositorio.persistencia.component;
+package com.pfc.planGestion.repositorio.persistencia.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,26 +9,25 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "categorias")
-
 public class CategoriaEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idCat")
-	private int idCat;
+	@Column(name="id_cat")
+	private long idCat;
 	@Column(name="nombre")
     private String nombre;
     
     public CategoriaEntity() {}
 
-    public CategoriaEntity(int idCat, String nombre) {
+    public CategoriaEntity(long idCat, String nombre) {
         this.idCat = idCat;
         this.nombre = nombre;
     }
     
-    public int getIdCat() {
+    public long getIdCat() {
         return idCat;
     }
-    public void setIdCat(int idCat) {
+    public void setIdCat(long idCat) {
         this.idCat = idCat;
     }
 

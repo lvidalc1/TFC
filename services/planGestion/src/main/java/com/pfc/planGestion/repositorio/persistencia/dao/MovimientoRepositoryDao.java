@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.pfc.planGestion.aplicacion.mapper.MovimientoEntityMapper;
 import com.pfc.planGestion.dominio.modelo.Movimiento;
 import com.pfc.planGestion.dominio.repositorio.MovimientoRepository;
 import com.pfc.planGestion.repositorio.persistencia.jpa.MovimientoJpaRepository;
+import com.pfc.planGestion.repositorio.persistencia.mapper.MovimientoEntityMapper;
 
 @Repository
 public class MovimientoRepositoryDao implements MovimientoRepository {
@@ -40,7 +40,7 @@ public class MovimientoRepositoryDao implements MovimientoRepository {
     }
 
     @Override
-    public Optional<Movimiento> findById(int idMov) {
+    public Optional<Movimiento> findById(long idMov) {
         return jpaRepository.findById(idMov)
                 .map(mapper::toDomain);
     }
@@ -53,7 +53,7 @@ public class MovimientoRepositoryDao implements MovimientoRepository {
     }
 
     @Override
-    public void deleteById(int idMov) {
+    public void deleteById(long idMov) {
         jpaRepository.deleteById(idMov);
     }
 

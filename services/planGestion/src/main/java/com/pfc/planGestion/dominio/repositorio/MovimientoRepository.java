@@ -11,10 +11,10 @@ public interface MovimientoRepository {
 
     List<Movimiento> findAll();
 
-    Optional<Movimiento> findById(int idMov);
+    Optional<Movimiento> findById(long idMov);
 
     List<Movimiento> findByCuenta_Iban(String iban);
 
-    void deleteById(int idMov);
+    void deleteById(long idMov);
 
 }

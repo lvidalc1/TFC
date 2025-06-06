@@ -3,24 +3,33 @@ package com.pfc.planGestion.interfaz.dto;
 import java.time.LocalDateTime;
 
 public class MovimientoDTO {
+	private long idMov;
     private LocalDateTime fecha;
     private Double importe;
     private Double reintegro;
     private Double saldoActual;
-//    private String nombreCategoria;
+    private CuentaDTO cuenta;
     
     public MovimientoDTO() {}
 
-    public MovimientoDTO(LocalDateTime fecha, Double importe, Double reintegro, Double saldoActual) {
-        this.fecha = fecha;
+    public MovimientoDTO(long idMov, LocalDateTime fecha, Double importe, Double reintegro, Double saldoActual, CuentaDTO cuenta) {
+        this.idMov=idMov;
+    	this.fecha = fecha;
         this.importe = importe;
         this.reintegro=reintegro;
         this.saldoActual = saldoActual;
-//		this.nombreCategoria=nombreCategoria;
-
+        this.cuenta=cuenta;
     }
     
 	
+	public long getIdMov() {
+		return idMov;
+	}
+
+	public void setIdMov(long idMov) {
+		this.idMov = idMov;
+	}
+
 	public LocalDateTime getFecha() {
 		return fecha;
 	}
@@ -48,13 +57,14 @@ public class MovimientoDTO {
 	public void setSaldoActual(Double saldoActual) {
 		this.saldoActual=saldoActual;
 	}
-	
-//	public String getNombreCategoria() {
-//		return nombreCategoria;
-//	}
-//	public void setNombreCategoria(String nombreCategoria) {
-//		this.nombreCategoria=nombreCategoria;
-//	}
+
+	public CuentaDTO getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(CuentaDTO cuenta) {
+		this.cuenta = cuenta;
+	}
 	
 
 }

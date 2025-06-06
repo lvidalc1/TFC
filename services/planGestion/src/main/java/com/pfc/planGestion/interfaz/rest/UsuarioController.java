@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pfc.planGestion.aplicacion.negocio.UsuarioService;
-import com.pfc.planGestion.dominio.modelo.Usuario;
 import com.pfc.planGestion.interfaz.dto.UsuarioDTO;
 import com.pfc.planGestion.interfaz.request.NifRequest;
 
@@ -34,7 +33,7 @@ public class UsuarioController {
 	
 	//registrar usuarios
 	@PostMapping("/registrar")
-	public ResponseEntity<String> registrar(@RequestBody Usuario usuario) {
+	public ResponseEntity<String> registrar(@RequestBody UsuarioDTO usuario) {
 		boolean registrado=usuarioService.registrarUsuario(usuario);
 
 		if(registrado) {

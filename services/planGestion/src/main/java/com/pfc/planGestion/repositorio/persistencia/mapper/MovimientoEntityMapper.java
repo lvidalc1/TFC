@@ -1,12 +1,18 @@
-package com.pfc.planGestion.aplicacion.mapper;
+package com.pfc.planGestion.repositorio.persistencia.mapper;
 
 import org.springframework.stereotype.Component;
 
 import com.pfc.planGestion.dominio.modelo.Movimiento;
-import com.pfc.planGestion.repositorio.persistencia.component.MovimientoEntity;
+import com.pfc.planGestion.repositorio.persistencia.entity.MovimientoEntity;
 
 @Component
 public class MovimientoEntityMapper {
+	
+	private CuentaEntityMapper cuentaEntityMapper;
+	
+	public MovimientoEntityMapper(CuentaEntityMapper cuentaEntityMapper) {
+		this.cuentaEntityMapper=cuentaEntityMapper;
+	}
 	
 	//convertir de entidad a dominio
 	public Movimiento toDomain(MovimientoEntity entity) {
@@ -18,7 +24,7 @@ public class MovimientoEntityMapper {
             entity.getImporte(),
             entity.getReintegro(),
             entity.getSaldoActual(),
-            entity.getIban()
+            cuentaEntityMapper.toDomain(entity.getIban())
         );
     }
 	
@@ -32,7 +38,7 @@ public class MovimientoEntityMapper {
             movimiento.getImporte(),
             movimiento.getReintegro(),
             movimiento.getSaldoActual(),
-            movimiento.getIban()
+            cuentaEntityMapper.toEntity(movimiento.getIban())
         );
     }
 

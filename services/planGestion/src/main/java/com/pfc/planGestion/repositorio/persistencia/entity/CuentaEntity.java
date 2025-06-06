@@ -1,4 +1,4 @@
-package com.pfc.planGestion.repositorio.persistencia.component;
+package com.pfc.planGestion.repositorio.persistencia.entity;
 
 import java.math.BigDecimal;
 

@@ -1,23 +1,21 @@
 package com.pfc.planGestion.interfaz.dto;
 
-import com.pfc.planGestion.dominio.modelo.Categoria;
-
 public class CategoriaDTO {
-	private int idCat;
+	private long idCat;
     private String nombre;
     
     public CategoriaDTO() {}
 
-    public CategoriaDTO(Categoria categoria) {
-        this.idCat = categoria.getIdCat();
-        this.nombre = categoria.getNombre();
+    public CategoriaDTO(long idCat, String nombre) {
+        this.idCat = idCat;
+        this.nombre = nombre;
     }
 
-    public int getIdCat() {
+    public long getIdCat() {
         return idCat;
     }
 
-    public void setIdCat(int idCat) {
+    public void setIdCat(long idCat) {
         this.idCat = idCat;
     }
 

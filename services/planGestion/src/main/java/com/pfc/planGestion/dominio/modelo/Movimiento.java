@@ -3,35 +3,29 @@ package com.pfc.planGestion.dominio.modelo;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import com.pfc.planGestion.repositorio.persistencia.component.CuentaEntity;
-
 public class Movimiento {
-	private int idMov;
+	private long idMov;
 	private LocalDateTime fecha;
 	private BigDecimal importe;
 	private BigDecimal reintegro;
 	private BigDecimal saldoActual;
-	private CuentaEntity iban;
-//	private String nombreTitular;
-//	private String nombreCategoria;
+	private Cuenta iban;
 	
 	public Movimiento() {}
 	
-	public Movimiento(int idMov, LocalDateTime fecha, BigDecimal importe, BigDecimal reintegro, BigDecimal saldoActual, CuentaEntity iban) {
+	public Movimiento(long idMov, LocalDateTime fecha, BigDecimal importe, BigDecimal reintegro, BigDecimal saldoActual, Cuenta iban) {
 		this.idMov=idMov;
 		this.fecha=fecha;
 		this.importe=importe;
 		this.reintegro=reintegro;
 		this.saldoActual=saldoActual;
 		this.iban=iban;
-//		this.nombreTitular=nombreTitular;
-//		this.nombreCategoria=nombreCategoria;
 	}
 	
-	public int getIdMov() {
+	public long getIdMov() {
 		return idMov;
 	}
-	public void setIdMov(int idMov) {
+	public void setIdMov(long idMov) {
 		this.idMov=idMov;
 	}
 	
@@ -63,25 +57,11 @@ public class Movimiento {
 		this.saldoActual=saldoActual;
 	}
 	
-	public CuentaEntity getIban() {
+	public Cuenta getIban() {
 		return iban;
 	}
-	public void setIban(CuentaEntity iban) {
+	public void setIban(Cuenta iban) {
 		this.iban=iban;
 	}
-	
-//	public String getNombreTitular() {
-//		return nombreTitular;
-//	}
-//	public void setNombreTitular(String nombreTitular) {
-//		this.nombreTitular=nombreTitular;
-//	}
-	
-//	public String getNombreCategoria() {
-//		return nombreCategoria;
-//	}
-//	public void setNombreCategoria(String nombreCategoria) {
-//		this.nombreCategoria=nombreCategoria;
-//	}
 }
 

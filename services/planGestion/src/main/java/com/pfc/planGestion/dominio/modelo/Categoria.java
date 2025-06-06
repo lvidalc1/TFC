@@ -2,21 +2,21 @@ package com.pfc.planGestion.dominio.modelo;
 
 
 public class Categoria {
-    private int idCat;
+    private long idCat;
     private String nombre;
 
     public Categoria() {
     }
 
-    public Categoria(int idCat, String nombre) {
+    public Categoria(long idCat, String nombre) {
         this.idCat = idCat;
         this.nombre = nombre;
     }
 
-    public int getIdCat() {
+    public long getIdCat() {
         return idCat;
     }
-    public void setIdCat(int idCat) {
+    public void setIdCat(long idCat) {
         this.idCat = idCat;
     }
 

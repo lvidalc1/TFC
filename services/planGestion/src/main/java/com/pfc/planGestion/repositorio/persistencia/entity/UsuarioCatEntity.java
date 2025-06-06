@@ -1,4 +1,4 @@
-package com.pfc.planGestion.repositorio.persistencia.component;
+package com.pfc.planGestion.repositorio.persistencia.entity;
 
 import java.math.BigDecimal;
 
@@ -8,21 +8,20 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="cuenta_categoria")
-
-public class CuentaCategoriaEntity {
+@Table(name="usuario_categoria")
+public class UsuarioCatEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idCc")
-	private int idCuentaCat;
-	@ManyToMany
-    @JoinColumn(name = "iban_cuenta")
-	private CuentaEntity cuenta;
-	@ManyToMany
+	@Column(name="id_uc")
+	private long idUsuarioCat;
+	@ManyToOne
+    @JoinColumn(name = "nif_usuario")
+	private UsuarioEntity usuario;
+	@ManyToOne
     @JoinColumn(name = "id_categoria")
 	private CategoriaEntity categoria;
 	@Column(name="presupuesto")
@@ -30,33 +29,36 @@ public class CuentaCategoriaEntity {
 	@Column(name="frecuencia")
 	private String frecuencia;
 	
-	public CuentaCategoriaEntity() {}
+	public UsuarioCatEntity() {}
 	
-	public CuentaCategoriaEntity(int idCuentaCat, CuentaEntity cuenta, CategoriaEntity categoria, BigDecimal presupuesto, String frecuencia) {
-		this.idCuentaCat = idCuentaCat;
-	    this.cuenta = cuenta;
+	public UsuarioCatEntity(long idUsuarioCat, UsuarioEntity usuario, CategoriaEntity categoria, BigDecimal presupuesto, String frecuencia) {
+		this.idUsuarioCat = idUsuarioCat;
+	    this.usuario = usuario;
 	    this.categoria = categoria;
 	    this.presupuesto = presupuesto;
 	    this.frecuencia = frecuencia;
 	}
 	
-	public int getIdCuentaCat() {
-        return idCuentaCat;
+	public long getIdUsuarioCat() {
+        return idUsuarioCat;
     }
-    public void setIdCuentaCat(int idCuentaCat) {
-        this.idCuentaCat = idCuentaCat;
-    }
-
-    public CuentaEntity getCuenta() {
-        return cuenta;
-    }
-    public void setCuenta(CuentaEntity cuenta) {
-        this.cuenta = cuenta;
+    public void setIdUsuarioCat(long idUsuarioCat) {
+        this.idUsuarioCat = idUsuarioCat;
     }
     
     public CategoriaEntity getCategoria() {
         return categoria;
     }
+    public UsuarioEntity getUsuario()
+    {
+        return usuario;
+    }
+
+    public void setUsuario(UsuarioEntity usuario)
+    {
+        this.usuario = usuario;
+    }
+
     public void setCategoria(CategoriaEntity categoria) {
         this.categoria = categoria;
     }

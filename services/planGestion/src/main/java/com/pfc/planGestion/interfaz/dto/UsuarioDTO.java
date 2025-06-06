@@ -1,9 +1,8 @@
 package com.pfc.planGestion.interfaz.dto;
 
-import com.pfc.planGestion.dominio.modelo.Usuario;
-
 public class UsuarioDTO {
 	private String nif;
+	private String pin;
 	private String nombre;
 	private String apel1;
 	private String apel2;
@@ -12,13 +11,14 @@ public class UsuarioDTO {
 	
 	public UsuarioDTO() {}
 	
-	public UsuarioDTO(Usuario usuario) {
-		this.nif=usuario.getNif();
-		this.nombre=usuario.getNombre();
-		this.apel1=usuario.getApel1();
-		this.apel2=usuario.getApel2();
-		this.direccion=usuario.getDireccion();
-		this.correo=usuario.getCorreo();
+	public UsuarioDTO(String nif, String pin, String nombre, String apel1, String apel2, String direccion, String correo) {
+		this.nif=nif;
+		this.pin=pin;
+		this.nombre=nombre;
+		this.apel1=apel1;
+		this.apel2=apel2;
+		this.direccion=direccion;
+		this.correo=correo;
 	}
 	
 	public String getNif() {
@@ -28,6 +28,14 @@ public class UsuarioDTO {
 		this.nif = nif;
 	}
 	
+	public String getPin() {
+		return pin;
+	}
+
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

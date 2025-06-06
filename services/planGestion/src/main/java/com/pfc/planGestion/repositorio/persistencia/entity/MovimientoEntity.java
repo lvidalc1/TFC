@@ -1,4 +1,4 @@
-package com.pfc.planGestion.repositorio.persistencia.component;
+package com.pfc.planGestion.repositorio.persistencia.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -14,12 +14,11 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="movimientos")
-
 public class MovimientoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idMov")
-	private int idMov;
+	@Column(name = "id_mov")
+	private long idMov;
 	@Column(name = "fecha")
 	private LocalDateTime fecha;
 	@Column(name = "importe")
@@ -37,7 +36,7 @@ public class MovimientoEntity {
 	
 	public MovimientoEntity() {}
 	
-	public MovimientoEntity(int idMov, LocalDateTime fecha, BigDecimal importe, BigDecimal reintegro, BigDecimal saldoActual, CuentaEntity iban) {
+	public MovimientoEntity(long idMov, LocalDateTime fecha, BigDecimal importe, BigDecimal reintegro, BigDecimal saldoActual, CuentaEntity iban) {
 		this.idMov=idMov;
 		this.fecha=fecha;
 		this.importe=importe;
@@ -47,10 +46,10 @@ public class MovimientoEntity {
 //		this.nombreCategoria=nombreCategoria;
 	}
 	
-	public int getIdMov() {
+	public long getIdMov() {
 		return idMov;
 	}
-	public void setIdMov(int idMov) {
+	public void setIdMov(long idMov) {
 		this.idMov=idMov;
 	}
 	

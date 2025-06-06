@@ -1,9 +1,9 @@
-package com.pfc.planGestion.aplicacion.mapper;
+package com.pfc.planGestion.repositorio.persistencia.mapper;
 
 import org.springframework.stereotype.Component;
 
 import com.pfc.planGestion.dominio.modelo.Cuenta;
-import com.pfc.planGestion.repositorio.persistencia.component.CuentaEntity;
+import com.pfc.planGestion.repositorio.persistencia.entity.CuentaEntity;
 
 @Component
 public class CuentaEntityMapper {

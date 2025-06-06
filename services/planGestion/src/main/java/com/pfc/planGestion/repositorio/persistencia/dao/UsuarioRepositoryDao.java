@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.pfc.planGestion.aplicacion.mapper.UsuarioEntityMapper;
 import com.pfc.planGestion.dominio.modelo.Usuario;
 import com.pfc.planGestion.dominio.repositorio.UsuarioRepository;
 import com.pfc.planGestion.repositorio.persistencia.jpa.UsuarioJpaRepository;
+import com.pfc.planGestion.repositorio.persistencia.mapper.UsuarioEntityMapper;
 
 @Repository
 public class UsuarioRepositoryDao implements UsuarioRepository {
