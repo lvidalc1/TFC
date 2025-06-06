@@ -10,5 +10,6 @@ public interface UsuarioCatRepository {
     Optional<UsuarioCat> findById(long id);
     List<UsuarioCat> findByFrecuencia(String frecuencia);
     List<UsuarioCat> findByIdCategoria(long idCategoria);
+	void save(UsuarioCat usuarioCat);
 
 }

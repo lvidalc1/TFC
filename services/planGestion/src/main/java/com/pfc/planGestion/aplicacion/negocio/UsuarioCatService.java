@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.pfc.planGestion.aplicacion.mapper.UsuarioCatDTOMapper;
+import com.pfc.planGestion.dominio.modelo.UsuarioCat;
 import com.pfc.planGestion.dominio.repositorio.UsuarioCatRepository;
 import com.pfc.planGestion.interfaz.dto.UsuarioCatDTO;
 
@@ -36,5 +37,12 @@ public class UsuarioCatService {
     public List<UsuarioCatDTO> findByIdCategoria(long idCategoria) {
         return usuarioCatRepository.findByIdCategoria(idCategoria).stream().map(usuarioCatDTOMapper::toDTO).collect(Collectors.toList());
     }
+    
+    //guardar presupuesto
+    public void guardarPresupuesto(UsuarioCatDTO dto) {
+        UsuarioCat usuarioCat = usuarioCatDTOMapper.toDomain(dto);
+        usuarioCatRepository.save(usuarioCat);
+    }
+
 
 }

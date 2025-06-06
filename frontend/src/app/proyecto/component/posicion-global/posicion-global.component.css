@@ -37,7 +37,7 @@
     justify-content: space-between;
     align-items: center;
 }
-/* .cubosInfo{
+.cubosInfo{
     padding-left: 20px;
     display: flex;
 }
@@ -53,7 +53,7 @@
 .cubosInfo div:hover{
     border: none;
     box-shadow: 1px 1px 4px grey;
-} */
+}
 .grafica{
     width: 800px;
     padding: 10px;

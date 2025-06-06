@@ -50,5 +50,11 @@ public class UsuarioCatRepositoryDao implements UsuarioCatRepository {
                 .map(mapper::toDomain)
                 .collect(Collectors.toList());
     }
+    
+    @Override
+    public void save(UsuarioCat usuarioCat) {
+        jpaRepository.save(mapper.toEntity(usuarioCat));
+    }
+
 
 }
