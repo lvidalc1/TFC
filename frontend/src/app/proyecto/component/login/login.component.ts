@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../model/usuario';
-import { USUARIOS } from 'src/app/mock-usuarios';
+// import { USUARIOS } from 'src/app/mock-usuarios';
 import { LoginService } from '../../service/login.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
@@ -13,12 +13,12 @@ import { NgForm } from '@angular/forms';
 
 
 export class LoginComponent implements OnInit {
-  texto: string = '';
   usuarios: Usuario = {
-    nif: '', pin: ''
+    nif: '',
+    pin: ''
   };
 
-  constructor(private loginService: LoginService, private router:Router) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,42 +28,46 @@ export class LoginComponent implements OnInit {
       alert('Por favor, complete todos los campos.');
       return;
     }
-  
-    const acceso = this.loginService.login(this.usuarios);
-    if (acceso) {
-      this.router.navigate(['/posicionGlobal']);
-    } else {
-      alert('Datos incorrectos');
-    }
+
+    this.loginService.login(this.usuarios).subscribe({
+      next: () => {
+        //“Inicio de sesión correcto”
+        this.router.navigate(['/posicionGlobal']);
+      },
+      error: () => {
+        alert('NIF o PIN incorrectos');
+      }
+    });
   }
-  //este código comentado es el equivalente al de arriba pero que recibiría datos de la url
-  // dniU: string = '';
-  // pinU: string = '';
-
-  // constructor(
-  //   private loginService: LoginService,
-  //   private router: Router
-  // ) { }
-
-  // ngOnInit(): void { }
-
-  // login() {
-  //   this.router.navigate(['/acceso']);
-  // }
-
-  // onAcceder(): void {
-  //   const usuario: Usuario = {
-  //     dni: this.dniU,
-  //     pin: this.pinU
-  //   };
-  //   this.loginService.login(usuario).subscribe((login: any) => {
-  //     if (login?.esValido) {
-  //       console.log('Datos introducidos correctemente');
-  //       this.login();//si los datos son correctos, redirige a la página de acceso
-  //     } else {
-  //       //console.log('datos incorrectos');
-  //       alert("El NIF o el PIN son incorrectos");
-  //     }
-  //   });
-  // }
 }
+
+//este código comentado es el equivalente al de arriba pero que recibiría datos de la url
+// dniU: string = '';
+// pinU: string = '';
+
+// constructor(
+//   private loginService: LoginService,
+//   private router: Router
+// ) { }
+
+// ngOnInit(): void { }
+
+// login() {
+//   this.router.navigate(['/acceso']);
+// }
+
+// onAcceder(): void {
+//   const usuario: Usuario = {
+//     dni: this.dniU,
+//     pin: this.pinU
+//   };
+//   this.loginService.login(usuario).subscribe((login: any) => {
+//     if (login?.esValido) {
+//       console.log('Datos introducidos correctemente');
+//       this.login();//si los datos son correctos, redirige a la página de acceso
+//     } else {
+//       //console.log('datos incorrectos');
+//       alert("El NIF o el PIN son incorrectos");
+//     }
+//   });
+// }
