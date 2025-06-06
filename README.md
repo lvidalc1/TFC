@@ -44,6 +44,7 @@ Las versiones de las herramientas utilizadas para el desarrollo de este proyecto
 - Angular: 12
 - Node: 12.22.12
 - npm: 6.14.16
+- Eclipse (última versión para evitar errores de compatiblidad con versiones antiguas)
 
 
 #### Versiones compatibles
@@ -70,9 +71,13 @@ Para la instalación de Angular:
 - Ejecutar en terminal el siguiente comando: **npm install -g @angular/cli@12**
 
 Para la ejecución de un proyecto:
-- Para crear un nuevo proyecto se ejecuta: **ng new nombre-proyecto** (en este caso ya está creado, solo habría que inicializarlo).
-- Situarse en la carpeta del proyecto creado: **cd nombre-proyecto** (cd proyecto-fin-ciclo)
-- Iniciamos el servidor de desarrollo con **ng serve --open** (con --open se abre un navegador a http/localhost:4200/)
+- Para crear un nuevo proyecto se ejecuta: **ng new proyecto-fin-ciclo**
+- Situarse en la carpeta del proyecto creado: **cd proyecto-fin-ciclo**
+- Iniciamos el servidor de desarrollo con **ng serve --proxy-config proxy.conf.json** (acceder desde un navegador a http/localhost:4200/)
+
+#### Instalación Eclipse
+
+Acceder a la siguiente url para la instalación de [Eclipse](https://www.eclipse.org/downloads/packages/release/2025-03/r/eclipse-ide-enterprise-java-and-web-developers)
 
 
 ## Estado del proyecto
@@ -82,12 +87,13 @@ Para la ejecución de un proyecto:
 
 ## Acceso al proyecto
 
-Puede acceder al código [fuente del proyecto](https://github.com/lvidalc1/TFC/tree/desarrollo/src/app).
+Puede acceder al código [fuente del proyecto](https://github.com/lvidalc1/TFC/tree/desarrollo).
 
 
 ## Tecnologías utilizadas
 
-Los lenguajes utilizados para la capa frontend, mediante el framework de Angular y usando como editor de código Visual Studio Code, han sido: HTML, CSS y TypeScript
+Los lenguajes utilizados para la capa frontend, mediante el framework de Angular y usando como editor de código Visual Studio Code, han sido: HTML, CSS y TypeScript.
+Para la capa backend: Java y Spring Boot.
 
 <a href="https://developer.mozilla.org/es/docs/Web/HTML">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" alt="fotoHtml" width="100px"/>
@@ -100,6 +106,16 @@ Los lenguajes utilizados para la capa frontend, mediante el framework de Angular
 <a href="https://developer.mozilla.org/en-US/docs/Glossary/TypeScript">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" alt="fotoTypeScript" width="90px"/>
 </a>
+
+<a href="https://eclipseide.org/">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSqDKaYYtxSS8S-nfAdp_vlYHcq1401M6IZA&s" alt="javaEclipse" width="90px"/>
+</a>
+
+<a href="https://spring.io/projects/spring-boo">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8i4zPog-0j0JR_yZglxPhTPZXxN2iMTQ3Dw&s" alt="springBoot" width="90px"/>
+</a>
+
+
 
 
 ## Personas desarrolladoras
