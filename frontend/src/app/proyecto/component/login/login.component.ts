@@ -15,7 +15,7 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
   texto: string = '';
   usuarios: Usuario = {
-    dni: '', pin: ''
+    nif: '', pin: ''
   };
 
   constructor(private loginService: LoginService, private router:Router) { }

@@ -1,4 +1,4 @@
 export interface Usuario{
-    dni:string;
+    nif:string;
     pin:string;
 }

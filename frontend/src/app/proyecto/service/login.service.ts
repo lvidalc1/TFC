@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../model/usuario';
-import { USUARIOS } from 'src/app/mock-usuarios';
+// import { USUARIOS } from 'src/app/mock-usuarios';
 import { Observable } from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
@@ -18,7 +18,7 @@ export class LoginService {
   // }
   login(usuario: Usuario): boolean {
     for (let u of USUARIOS) {
-      if (u.dni === usuario.dni && u.pin === usuario.pin) {
+      if (u.nif === usuario.nif && u.pin === usuario.pin) {
         return true;
       }
     }
